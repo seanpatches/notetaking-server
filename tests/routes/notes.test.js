@@ -30,4 +30,17 @@ describe('Note route tests', ()=> {
         });
       });
   });
+
+  it('gets all notes', () => {
+    return request(app)
+      .post('/notes')
+      .send({ title: 'titled', body: 'bodied' })
+      .then(createdNoted => {
+        return request(app)
+          .get('/notes')
+          .then(res => {
+            expect(res.body[0].title).toEqual('titled');
+          });
+      });
+  });
 });
