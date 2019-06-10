@@ -1,5 +1,10 @@
 language: node_js
-node_js: 
-  - "node"
+node_js:
+- node
 services: mongodb
 env: MONGODB_URI=mongodb://localhost:27017/openForce
+deploy:
+  provider: heroku
+  api:
+    key:
+      secure: poQgM1ZS4oEv2zuiIu66j8dNX8/FfQ9nrj0qeiG39zKI2bqXaV5713+R0ohgTD1wBjDzhfA+2sj+V2IU+zbMAPA+wC2cEwdwZJ+grzr8TtLghUmL+tA99IuDBh+SMj2HXikyT1MCX/40v9fis+gJJyA4rTX133ZJq/TsMM1P3uHwbW6O7/pEgeAiTKGPxXdOy1qITPp7EdhhXerGbzoxTOWPGaZGmb/u9aRlDRVFemFPp2vWho6YIlnLsempLUMmcVRCnT9rccOYolQhcN+s8DAFg3u3AIVdemqcNmHJMpZmGAEteUPNRye5q5BJ6JiRNUa+NYMqFROf1ZRqggdobCJAN5yuaJ+4MBSnCm5f+kPZz4BIG4rffNPcQRLvCWrGITsYZE4qLP3pmASAiv/nhbmLroBydvZ+sow0avWmSkynqna8Y/r+l8enWvc7FKzyDmHRIsVic4ix5UDw7NqeckY5yjoeK6xjMriTv+Uv4e3jVl30H5JMAT/+6Rq+a5mEoSViJYA6B5Q+S+UVq6WqLeSw8bKZLwLF5L9CKv9ca5kA63OMOa3eaLerBWHCnzDgG1Jl9UgtJo/N3E9gJN8SXFpAs1tFAovQnMwvY1YA7i6b4JLLaJ06xLwmtJjo6UdVr0nc8SKugvQXASGljlqsBVszv9AuTUAdmcXthVDmvEw=
