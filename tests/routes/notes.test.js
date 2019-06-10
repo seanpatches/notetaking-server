@@ -35,11 +35,11 @@ describe('Note route tests', ()=> {
     return request(app)
       .post('/notes')
       .send({ title: 'titled', body: 'bodied' })
-      .then(createdNoted => {
+      .then(createdNote => {
         return request(app)
           .get('/notes')
           .then(res => {
-            expect(res.body[0].title).toEqual('titled');
+            expect(res.body[0].title).toEqual(createdNote.body.title);
           });
       });
   });
