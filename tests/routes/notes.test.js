@@ -43,4 +43,17 @@ describe('Note route tests', ()=> {
           });
       });
   });
+
+  it('gets a single note', () => {
+    return request(app)
+      .post('/notes')
+      .send({ title: 'titled', body: 'bodied' })
+      .then(createdNote => {
+        return request(app)
+          .get(`/notes/${createdNote.body._id}`)
+          .then(res => {
+            expect(res.body.title).toEqual(createdNote.body.title);
+          });
+      });
+  });
 });
